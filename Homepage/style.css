@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header {
+
+    padding: 10px 0;
+}
+
+body, html {
+    height: 100%;
+    background-color: #000;
+}
+.existing-rectangular-box {
+    width: 1500px;
+    height: 90px;
+    margin-left:10px;
+    margin-top: 3px;
+    background-color: #007BFF;
+    position: absolute;
+    border-radius: 15px;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start; /* Align items at the top */
+}
+
+section {
+    flex: 1;
+    position: relative;
+    height: 90%;
+    display: flex;
+    flex-direction: column; /* Stack the video and navigation vertically */
+}
+
+section video {
+    height: 700px; /* Keep the height the same */
+    width: 1500px; /* Keep the width the same with 1 cm margin on both sides */
+    object-fit: cover;
+    margin: 3cm; /* Add 3 cm margin on all sides to the video */
+    position: relative;
+    left: 2px;
+    border-radius: 20px; /* Add rounded corners to the video */
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+section .navigation {
+    position: absolute;
+    top: 18cm; /* Adjust the top value to move the navigation section higher */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+section .navigation li {
+    list-style: none;
+    cursor: pointer;
+    background: #fff;
+    opacity: 0.7;
+    transition: 0.5s;
+    width: 90px;
+    bottom: 0; /* Set bottom to 0 to have the list items at the same vertical position */
+    height: 100px;
+    margin: 0.5cm;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+
+section .navigation li img {
+    width: 100%; /* Ensure the image takes up the full space within the square thumbnails */
+    height: 100%; /* Maintain the aspect ratio */
+    transition: 0.5s;
+}
+
+section .navigation li:hover {
+    opacity: 1;
+    transform: scale(1.1); /* Scale up the thumbnail on hover */
+}
+
+/* text position  */
+
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .center {
+    position: absolute;
+    top: 45%;
+    left: 6%;
+    transform: translate(-50%, 50%);
+    font-weight: bold;
+    font-size: 50px;
+  }
+  
+  /* thumbnail for tv start  */
+  .thumbnail-container {
+    display: flex;
+    flex-direction: row; /* Thumbnails ko horizontal row me karne ke liye */
+    justify-content: space-between; /* Thumbnails ke beech mein space dena */
+    align-items: center; /* Center thumbnails vertically */
+}
+
+.thumbnail {
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 90%; /* Use a fixed width */
+    height: 80%; /* Use a fixed height */
+    margin: 0px;
+    border-radius: 10px; /* Thumbnail ke corners ko round shape me karne ke liye */
+    /* Thumbnail ko square shape dena */
+    margin-top: 0; /* Add 3cm margin to the top and bottom */
+    /* Add focus styles for accessibility */
+    outline: none;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+}
+
+/* Add focus styles for accessibility */
+.thumbnail:focus {
+    box-shadow: 0 0 2px 2px rgba(0, 0, 255, 0.7);
+}
+
+  .thumbnail-container2 {
+    display: flex;
+    flex-direction: row; /* Thumbnails ko horizontal row me karne ke liye */
+    justify-content: space-between; /* Thumbnails ke beech mein space dena */
+    align-items: center; /* Center thumbnails vertically */
+}
+
+.thumbnail-movie {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 90%; /* Use a fixed width */
+    height: 80%; /* Use a fixed height */
+    margin: 0px;
+    top: -70px;
+    border-radius: 10px; /* Thumbnail ke corners ko round shape me karne ke liye */
+    /* Thumbnail ko square shape dena */
+    margin-top: 0; /* Add 3cm margin to the top and bottom */
+    /* Add focus styles for accessibility */
+    outline: none;
+}
+
+.thumbnail-movie :hover {
+    transform: scale(1.1); /* Increase the size on hover */
+}
+
+/* Add focus styles for accessibility */
+.thumbnail-movie :focus {
+    box-shadow: 0 0 2px 2px rgba(0, 0, 255, 0.7);
+}
+
+  .thumbnail-container3 {
+    display: flex;
+    flex-direction: row; /* Thumbnails ko horizontal row me karne ke liye */
+    justify-content: space-between; /* Thumbnails ke beech mein space dena */
+    align-items: center; /* Center thumbnails vertically */
+}
+
+.thumbnail-sport {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 80%; /* Use a fixed width */
+    height: 500px; /* Use a fixed height */
+    margin: 0px;
+    border-radius: 10px; /* Thumbnail ke corners ko round shape me karne ke liye */
+    /* Thumbnail ko square shape dena */
+    margin-top: -100px; /* Add 3cm margin to the top and bottom */
+    /* Add focus styles for accessibility */
+    outline: none;
+}
+
+.thumbnail-sport :hover {
+    transform: scale(1.1); /* Increase the size on hover */
+}
+
+/* Add focus styles for accessibility */
+.thumbnail-sport :focus {
+    box-shadow: 0 0 2px 2px rgba(0, 0, 255, 0.7);
+}
+.text1 {
+    position: relative;
+    color: #fff;
+    top: 380px;
+    font-size: 40px; /* Add a semicolon here */
+    font-family: Agbalumo,  'Open Sans', 'Noto Serif Old Uyghur', 'Edu TAS Beginner', 'Dancing Script', 'Shadows Into Light', 'sans-serif';
+    margin: 10px;
+    margin-left: 40px;
+    
+  }
+  
+  .text2 {
+    position: relative;
+    color: #fff;
+    top: 24cm;
+    font-size: 50px;
+    font-family: Agbalumo,  'Open Sans', 'Noto Serif Old Uyghur', 'Edu TAS Beginner', 'Dancing Script', 'Shadows Into Light', 'sans-serif';
+    margin: 15px; /* Margin property se gap dena */
+    margin-left: 10px;
+  }
+  .text3 {
+    position: relative;
+    color: #fff;
+    top: 37cm;
+    font-size: 55px;
+    font-family: Agbalumo,  'Open Sans', 'Noto Serif Old Uyghur', 'Edu TAS Beginner', 'Dancing Script', 'Shadows Into Light', 'sans-serif';
+    margin: 10px; 
+  }
+
+#seeAllButtontv {
+    position: absolute;
+    background-color: transparent;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 890px;
+    color: #fff;
+    border-color: #fff;
+    font-size: 20px;
+    font-family: 'Edu TAS Beginner','Agbalumo',  'Open Sans', 'Noto Serif Old Uyghur', 'Edu TAS Beginner', 'Dancing Script', 'Shadows Into Light', 'sans-serif';
+    margin-left: 1400px;
+    transition: background-color 0.5s;
+
+}
+#seeAllButtontv:hover{
+    cursor: pointer;
+    background:#fff;
+    color: #000;
+    transition: 1s;
+  
+    
+}
+#seeAllButtonmovie {
+    position: absolute;
+    margin-top: 38cm;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+    font-size: 20px;
+    font-family: 'Edu TAS Beginner','Agbalumo',  'Open Sans', 'Noto Serif Old Uyghur', 'Edu TAS Beginner', 'Dancing Script', 'Shadows Into Light', 'sans-serif';
+    margin-left: 1400px;
+    transition: background 0.5s;
+}
+#seeAllButtonmovie:hover{
+    cursor: pointer;
+    background:#fff;
+    color: #000;
+    transition: 1s;
+    
+}
+#seeAllButtonsport {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-top: 52cm;
+    color: #fff;
+    border-color: #fff;
+    font-size: 20px;
+    font-family: 'Edu TAS Beginner','Agbalumo',  'Open Sans', 'Noto Serif Old Uyghur', 'Edu TAS Beginner', 'Dancing Script', 'Shadows Into Light', 'sans-serif';
+    margin-left: 1400px;
+    transition: background 0.5;
+}
+#seeAllButtonsport:hover{
+    cursor: pointer;
+    background:#fff;
+    color: #000;
+    transition: 1s;
+    
+}
+/* end of this page  */
+
+.rectangular-box{
+    width: 1500px;
+    height: 400px;
+    left: 10px;
+    background-color:  #3b3b3b;
+    position: absolute;
+    top: 2600px;
+    bottom: 3000px;
+    border-radius: 10px; /* Aap is value ko apne pasand ke anusaar adjust kar sakte hain. */
+}
+
+
+
+/* about us start */
+#aboutUsButton {
+    position: absolute;
+    background: none; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove button border */
+    cursor: pointer;
+    margin-top: 2600px;
+    font-size: 30px;
+    margin-left: 5px;
+    
+}
+#aboutUsButton:hover {
+    cursor: pointer;
+    transform: scale(1.2); /* Zoom in by 20% */
+    transition: transform 0.3s ease;
+}
+    /* about us end */

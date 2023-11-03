@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Slider</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="existing-rectangular-box"></div>
+    <div class="center">
+        <div class="text1"><p>TV</p></div>
+        <div class="text2"><p>Movies</p></div>
+        <div class="text3"><p>Sports</p></div>
+    </div>
+    
+    <section>
+        <!-- video and thumbnail for slider start  -->
+        <video id="slider" autoplay muted loop>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+        <ul class="navigation">
+            <li onclick="videoUrl('video1.mp4')"><img src="thumb1.jpg"></li>
+            <li onclick="videoUrl('video2.mp4')"><img src="thumb2.jpg"></li>
+            <li onclick="videoUrl('video3.mp4')"><img src="thumb3.jpg"></li>
+            <li onclick="videoUrl('video4.mp4')"><img src="thumb4.jpg"></li>
+            <li onclick="videoUrl('video1.mp4')"><img src="thumb5.jpg"></li>
+        </ul>
+        <!-- video and thumbnail for slider end  -->
+
+        <!-- Thumbnails for TV start -->
+        <div class="thumbnail-container">
+            <div class="thumbnail">
+                <a href="video1.mp4" target="_blank">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 1" class="thumbnail">
+                </a>
+            </div>
+            <div class="thumbnail">
+                <a href="video2.mp4" target="_blank">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 2" class="thumbnail">
+                </a>
+            </div>
+            <div class="thumbnail">
+                <a href="video3.mp4" target="_blank">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 3" class="thumbnail">
+                </a>
+            </div>
+            <div class="thumbnail">
+                <a href="video4.mp4" target="_blank">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 4" class="thumbnail">
+                </a>
+            </div>
+            <div class="thumbnail">
+                <a href="video5.mp4" target="_blank">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 5" class="thumbnail">
+                </a>
+            </div>
+        </div>
+        
+        <!-- Thumbnails for TV end -->
+
+
+
+         <!-- Thumbnails for Movie start -->
+
+
+
+         <div class="thumbnail-container2">
+            <div class="thumbnail-movie">
+                <a href="video1.mp4">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 1" class="thumbnail">
+                </a>
+            </div>
+            <div class="thumbnail-movie">
+                <a href="video2.mp4">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 2" class="thumbnail">
+                </a>
+            </div>
+            <div class="thumbnail-movie">
+                <a href="video2.mp4">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 3" class="thumbnail">
+                </a>
+            </div>
+            
+            <div class="thumbnail-movie">
+                <a href="video4.mp4">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 4" class="thumbnail">
+                </a>
+            </div>
+            <div class="thumbnail-movie">
+                <a href="video5.mp4">
+                    <img src="VideoThumbnail.jpg" alt="VideoThumbnail 5" class="thumbnail">
+                </a>
+            </div>
+        </div>
+        
+
+<!-- Thumbnails for Movie end -->
+
+<!-- Thumbnails for Sports Start -->
+
+<div class="thumbnail-container3">
+    <div class="thumbnail-sport">
+        <a href="video1.mp4" target="_blank">
+            <img src="VideoThumbnail.jpg" alt="VideoThumbnail 1" class="thumbnail">
+        </a>
+    </div>
+    <div class="thumbnail-sport">
+        <a href="video2.mp4" target="_blank">
+            <img src="VideoThumbnail.jpg" alt="VideoThumbnail 2" class="thumbnail">
+        </a>
+    </div>
+    <div class="thumbnail-sport">
+        <a href="video3.mp4" target="_blank">
+            <img src="VideoThumbnail.jpg" alt="VideoThumbnail 3" class="thumbnail">
+        </a>
+    </div>
+    <div class="thumbnail-sport">
+        <a href="video4.mp4" target="_blank">
+            <img src="VideoThumbnail.jpg" alt="VideoThumbnail 4" class="thumbnail">
+        </a>
+    </div>
+    <div class="thumbnail-sport">
+        <a href="video5.mp4" target="_blank">
+            <img src="VideoThumbnail.jpg" alt="VideoThumbnail 5" class="thumbnail">
+        </a>
+    </div>
+</div>
+
+<!-- Thumbnails for Sports end -->
+
+        <div class="rectangular-box"></div>
+        <div class="rectangular-box"></div>
+        <button id="seeAllButtontv">See All>></button>
+        <button id="seeAllButtonmovie">See All>></button>
+        <button id="seeAllButtonsport">See All>></button>
+          <!-- Button to open "aboutus.html" in a new tab -->
+        <button id="aboutUsButton">About Us</button>
+    </section>
+
+    <script>
+        function videoUrl(videoSrc) {
+            document.getElementById("slider").querySelector('source').src = videoSrc;
+            document.getElementById("slider").load();
+            document.getElementById("slider").play();
+        }
+    
+        // Automatically switch to the next video every 5 seconds
+        const videos = [
+            'video1.mp4',
+            'video2.mp4',
+            'video3.mp4',
+            'video4.mp4',
+            'video5.mp4'
+        ];
+        let currentVideoIndex = 0;
+    
+        function autoSlide() {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            const nextVideo = videos[currentVideoIndex];
+            const videoElement = document.getElementById("slider");
+            videoElement.querySelector('source').src = nextVideo;
+            videoElement.load();
+            videoElement.play();
+        }
+    
+        setInterval(autoSlide, 5000); // Change video every 5 seconds
+
+        //see all button for tv start
+         // JavaScript ka code seeAllButton per click event handle karne ke liye.
+         document.getElementById('seeAllButtontv').addEventListener('click', function() {
+            // Yahan per aap tv.html file me enter ho sakte hain.
+            window.location.href = 'tv.html';
+        });
+
+        //see all button for tv end
+        //see all button for movie start
+
+        document.getElementById('seeAllButtonmovie').addEventListener('click', function() {
+            // Yahan per aap tv.html file me enter ho sakte hain.
+            window.location.href = 'movie.html';
+        });
+            //see all button for movie end
+
+          //see all button for sport start
+        document.getElementById('seeAllButtonsport').addEventListener('click', function() {
+            // Yahan per aap tv.html file me enter ho sakte hain.
+            window.location.href = 'sports.html';
+        });
+            //see all button for sport end
+
+//about us button start
+            // JavaScript code to handle the button click
+            document.getElementById("aboutUsButton").addEventListener("click", function() {
+                // Open "aboutus.html" in a new tab
+                window.open("aboutus.html", "_blank");
+            });
+            
+//about us button end
+
+    </script>
+    
+</body>
+</html>
